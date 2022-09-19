@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ProyectoSemestre</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">BoardDex</string>
+    <string name="nav_header_subtitle">Para amantes de los BoardGames</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Cerrar sesión</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Agregar juegos</string>
+    <string name="menu_slideshow">Compartir</string>
+</resources>
