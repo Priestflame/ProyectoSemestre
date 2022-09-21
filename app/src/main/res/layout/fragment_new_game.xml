@@ -93,10 +93,10 @@
         android:id="@+id/bt_agregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Agregar"
         android:layout_below="@id/spinner_categoria"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Agregar" />
 
 
 </RelativeLayout>
