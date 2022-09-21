@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewGameFragment"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/newGame_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_new_game"
+        android:gravity="center_horizontal"
+        android:textSize="40dp"
+        android:layout_marginTop="20dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tx_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newGame_title"
+        android:layout_marginTop="40dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del juego" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tx_editorial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tx_name"
+        android:layout_marginTop="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_editorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Editorial" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tb_tipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipo de juego"
+        android:layout_below="@id/tx_editorial"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_tipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tb_tipo">
+
+        <RadioButton
+            android:id="@+id/rb_competitivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Competitivo" />
+
+        <RadioButton
+            android:id="@+id/rb_cooperativo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cooperativo" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tb_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        android:layout_below="@id/radioGroup_tipo"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"/>
+
+    <Spinner
+        android:id="@+id/spinner_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tb_categoria"
+        android:layout_marginTop="15dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_agregar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Agregar"
+        android:layout_below="@id/spinner_categoria"
+        android:layout_marginTop="30dp"/>
+
+
+</RelativeLayout>

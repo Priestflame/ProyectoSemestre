@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //Metodo para salir al login desde Home
     // por alguna razón la app se cierra cuando esto está aquí
+    // Hay que agregar un destroy para saltar a la otra activity
     /*
     public void cerrarSesion(View view) {
         Intent login = new Intent(this, MainActivity.class);

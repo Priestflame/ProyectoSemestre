@@ -22,4 +22,23 @@
         android:name="com.example.proyectosemestre.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.proyectosemestre.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/newGameFragment"
+        android:name="com.example.proyectosemestre.NewGameFragment"
+        android:label="fragment_new_game"
+        tools:layout="@layout/fragment_new_game" >
+        <action
+            android:id="@+id/action_newGameFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.proyectosemestre.HomeActivity"
+        android:label="app_bar_home"
+        tools:layout="@layout/app_bar_home" />
 </navigation>
