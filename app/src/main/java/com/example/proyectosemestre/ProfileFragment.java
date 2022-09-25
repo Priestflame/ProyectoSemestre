@@ -10,6 +10,9 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
@@ -26,7 +29,6 @@ public class ProfileFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -72,6 +74,27 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //Seccion logica Spinner paises
+        Spinner spinner_country = view.findViewById(R.id.spinner_country);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.array_countries,
+                android.R.layout.simple_spinner_item);
+        //Seteamos el adaptador al spinner
+        spinner_country.setAdapter(adapter);
+        //Desplegamos seleccionado en Toast
+        spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(adapterView.getContext(), adapterView.getItemAtPosition(i).toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        //Seccion logica boton Actualizar
         MaterialButton btn_actualizar = view.findViewById(R.id.bt_actualizar);
         btn_actualizar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,5 +103,7 @@ public class ProfileFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.nav_home);
             }
         });
+
+
     }
 }

@@ -9,4 +9,24 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+    <string-array name="array_countries">
+        <item>Seleccionar</item>
+        <item>Chile</item>
+        <item>Perú</item>
+        <item>Argentina</item>
+        <item>México</item>
+        <item>Brasil</item>
+        <item>USA</item>
+        <item>Canadá</item>
+        <item>España</item>
+    </string-array>
+
+    <string-array name="array_gameCategory">
+        <item>Seleccionar</item>
+        <item>Eurogame</item>
+        <item>Ameritrash</item>
+        <item>Party</item>
+        <item>Otro</item>
+    </string-array>
 </resources>
