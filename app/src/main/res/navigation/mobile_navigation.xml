@@ -29,12 +29,12 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.proyectosemestre.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/newGameFragment"
         android:name="com.example.proyectosemestre.NewGameFragment"
-        android:label="fragment_new_game"
+        android:label="@string/menu_new_game"
         tools:layout="@layout/fragment_new_game" >
         <action
             android:id="@+id/action_newGameFragment_to_nav_home"
@@ -45,4 +45,9 @@
         android:name="com.example.proyectosemestre.HomeActivity"
         android:label="app_bar_home"
         tools:layout="@layout/app_bar_home" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.proyectosemestre.MapsFragment"
+        android:label="@string/menu_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

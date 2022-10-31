@@ -20,5 +20,9 @@
             android:id="@+id/profileFragment"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/menu_profile"/>
+        <item
+            android:id="@+id/mapsFragment"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_maps"/>
     </group>
 </menu>

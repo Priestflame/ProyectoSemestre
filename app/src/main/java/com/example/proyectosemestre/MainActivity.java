@@ -31,10 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btn_huella.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                androidx.biometric.BiometricManager biometricManager = androidx.biometric.BiometricManager.from(MainActivity.this);
-                if (biometricManager.canAuthenticate() == BiometricManager.BIOMETRIC_SUCCESS){
-                    huella();
-                }
+                huella();
             }
         });
     }
