@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_back_01"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_iniciaSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Iniciar Sesión (Landscape)"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ing_user"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_iniciaSesion"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/yellow_main"
+        android:textColorHint="@color/purple_200"
+        android:textStyle="bold">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tb_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre de Usuario"
+            android:textSize="20dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ing_pass"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ing_user"
+        android:layout_marginTop="10dp"
+        app:endIconMode="password_toggle"
+        android:textColor="@color/purple_200"
+        android:textColorHint="@color/purple_200"
+        android:textStyle="bold">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tb_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:textSize="20dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_entrar"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ing_pass"
+        android:layout_marginTop="20dp"
+        android:onClick="ingresarHome"
+        android:textSize="16dp"
+        android:text="ENTRAR"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_huella"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/ing_pass"
+        android:layout_toRightOf="@id/btn_entrar"
+        android:onClick="ingresarHome"
+        android:text="AUTENTICAR  MEDIANTE HUELLA"
+        android:textStyle="bold"
+        android:textSize="16dp"/>
+
+</RelativeLayout>
