@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.proyectosemestre.ui.home.HomeFragment"
+        android:name="com.boardex.proyectosemestre.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.proyectosemestre.ui.gallery.GalleryFragment"
+        android:name="com.boardex.proyectosemestre.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" >
         <action
@@ -23,17 +23,17 @@
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.proyectosemestre.ui.slideshow.SlideshowFragment"
+        android:name="com.boardex.proyectosemestre.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.proyectosemestre.ProfileFragment"
+        android:name="com.boardex.proyectosemestre.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/newGameFragment"
-        android:name="com.example.proyectosemestre.NewGameFragment"
+        android:name="com.boardex.proyectosemestre.NewGameFragment"
         android:label="@string/menu_new_game"
         tools:layout="@layout/fragment_new_game" >
         <action
@@ -42,12 +42,12 @@
     </fragment>
     <activity
         android:id="@+id/homeActivity"
-        android:name="com.example.proyectosemestre.HomeActivity"
+        android:name="com.boardex.proyectosemestre.HomeActivity"
         android:label="app_bar_home"
         tools:layout="@layout/app_bar_home" />
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.example.proyectosemestre.MapsFragment"
+        android:name="com.boardex.proyectosemestre.MapsFragment"
         android:label="@string/menu_maps"
         tools:layout="@layout/fragment_maps" />
 </navigation>

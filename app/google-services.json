@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "615340907241",
+    "project_id": "proyectosemestre-c25e6",
+    "storage_bucket": "proyectosemestre-c25e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615340907241:android:bda988036ffc64d0af2e78",
+        "android_client_info": {
+          "package_name": "com.boardex.proyectosemestre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615340907241-e7q3k7at5v53chocro0ched5i3u33027.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBVfeMpTlqz1ECw_4uwXXAAxtybwLn6mM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615340907241-e7q3k7at5v53chocro0ched5i3u33027.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
