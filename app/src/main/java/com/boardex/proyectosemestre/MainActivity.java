@@ -9,11 +9,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthResult;
@@ -29,11 +31,12 @@ public class MainActivity extends AppCompatActivity {
     private Executor executor;
     MaterialButton btn_huella;
 
-    private String userID;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private EditText txtmail;
     private EditText txtpass;
+    private MaterialButton btn_login;
+    private String correo = "", password = "";
 
     @Override
     public void onStart() {
@@ -46,11 +49,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        txtmail = findViewById(R.id.tb_user);
-        txtpass = findViewById(R.id.tb_pass);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        txtmail = findViewById(R.id.tb_user);
+        txtpass = findViewById(R.id.tb_pass);
+        btn_login = findViewById(R.id.btn_entrar);
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validarDatos();
+            }
+        });
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -66,32 +78,48 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void userLogin(){
-        String mail = txtmail.getText().toString();
-        String pass = txtpass.getText().toString();
+    private void validarDatos() {
+        correo = txtmail.getText().toString();
+        password = txtpass.getText().toString();
 
-        if(TextUtils.isEmpty(mail)){
-            txtmail.setError("Ingrese un correo");
-            txtmail.requestFocus();
-        }else if(TextUtils.isEmpty(pass)){
-            txtpass.setError("Ingrese una contraseña");
-            txtpass.requestFocus();
-        }else{
-            mAuth.signInWithEmailAndPassword(mail, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        Intent login = new Intent(getApplicationContext(), HomeActivity.class);
-                        startActivity(login);
-                        finish();
-                    }else{
-                        Log.w("TAG","Error: ", task.getException());
-                    }
-                }
-            });
+        if(!Patterns.EMAIL_ADDRESS.matcher(correo).matches()){
+            Toast.makeText(this, "Correo inválido", Toast.LENGTH_SHORT).show();
+        } else if (TextUtils.isEmpty(password)){
+            Toast.makeText(this, "Ingrese contraseña", Toast.LENGTH_SHORT).show();
+        } else {
+            loginUsuario();
         }
     }
 
+    private void loginUsuario() {
+        mAuth.signInWithEmailAndPassword(correo, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                if(task.isSuccessful()){
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    Intent login = new Intent(getApplicationContext(), HomeActivity.class);
+                    startActivity(login);
+                    Toast.makeText(MainActivity.this, "Bienvenid@ "+ user.getEmail(), Toast.LENGTH_SHORT).show();
+                    finish();
+                } else{
+                    Toast.makeText(MainActivity.this, "Correo y/o contraseña inválidos", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(MainActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
 
     public void huella(){
         biometricPrompt= new BiometricPrompt(MainActivity.this, executor, new BiometricPrompt.AuthenticationCallback(){

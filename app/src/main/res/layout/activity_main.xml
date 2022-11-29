@@ -64,7 +64,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ing_pass"
         android:layout_marginTop="20dp"
-        android:onClick="ingresarHome"
         android:text="ENTRAR"
         android:textStyle="bold" />
 
